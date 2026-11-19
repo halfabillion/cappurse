@@ -1,0 +1,22 @@
+# Build artefacts
+template/target/
+**/target/
+**/*.sqlite
+**/*.sqlite-wal
+**/*.sqlite-shm
+**/__pycache__/
+*.pyc
+
+# Secrets and wallets must never land in this public tree
+.secrets/
+*.key
+.env
+.env.*
+!.env.example
+wallet/
+SEED_PRIVATE.txt
+PASSWORD_PRIVATE.txt
+ADDRESS.txt
+
+.DS_Store
+*.log

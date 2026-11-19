@@ -1,0 +1,44 @@
+[package]
+name = "cappurse"
+version = "0.1.0"
+edition = "2024"
+description = "Spend-capped allowance vault for Tari Ootle"
+license = "MIT"
+authors = ["Ali Ghaedi"]
+
+[package.metadata.tari-template]
+tags = ["payments", "allowance", "mvp"]
+category = "finance"
+
+[dependencies]
+tari_template_lib = { version = "0.40" }
+
+[dev-dependencies]
+tari_template_test_tooling = "0.53"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 's'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
+
+# Wasmer and Cranelift are extremely slow in debug mode.
+[profile.dev.package.wasmer]
+opt-level = 2
+[profile.dev.package.wasmer-compiler]
+opt-level = 2
+[profile.dev.package.wasmer-compiler-cranelift]
+opt-level = 2
+[profile.dev.package.cranelift-codegen]
+opt-level = 2
+[profile.dev.package.cranelift-frontend]
+opt-level = 2
+[profile.dev.package.cranelift-entity]
+opt-level = 2
+
+[build-dependencies]
+tari_ootle_template_build = "0.20"

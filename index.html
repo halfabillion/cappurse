@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CapPurse — a spend-capped allowance vault on Tari Ootle</title>
+  <meta name="description" content="CapPurse is a spend-capped allowance vault for Tari Ootle. The helper never takes custody. Open the walletless demo." />
+  <style>
+    :root {
+      --ink: #1c1712;
+      --ink-soft: #4a433a;
+      --paper: #f4efe6;
+      --card: #fffaf2;
+      --line: #d7cdb8;
+      --copper: #b5521f;
+      --copper-deep: #8c3b14;
+      --green: #2c6b4a;
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: "Source Sans 3", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #f8e7d2 0%, transparent 50%),
+        radial-gradient(900px 400px at 110% 0%, #e8d7c0 0%, transparent 45%),
+        var(--paper);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .banner {
+      background: var(--ink);
+      color: var(--paper);
+      text-align: center;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.55rem 1rem;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+    }
+    .lede { color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 1.75rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.25rem 1.35rem;
+      box-shadow: 0 14px 40px rgba(28, 23, 18, 0.08);
+    }
+    .card p { margin: 0 0 1rem; }
+    .card p:last-child { margin-bottom: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0 1.25rem; }
+    a.btn {
+      display: inline-block;
+      background: var(--copper);
+      color: #fffaf2;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.7rem 1.15rem;
+      border-radius: 999px;
+    }
+    a.btn:hover { background: var(--copper-deep); }
+    a.btn.secondary {
+      background: transparent;
+      color: var(--copper-deep);
+      border: 1px solid var(--copper);
+    }
+    a.btn.secondary:hover { background: #f0d3c0; }
+    ul { margin: 0.4rem 0 0; padding-left: 1.2rem; color: var(--ink-soft); }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+    footer a { color: var(--copper-deep); }
+  </style>
+</head>
+<body>
+  <div class="banner">Demo mode — walletless browser simulation, not connected to a wallet or the Tari network</div>
+  <main>
+    <h1>CapPurse</h1>
+    <p class="lede">A spend-capped allowance vault on Tari Ootle. Deposit TARI, give a helper a hard cap, and revoke it at once. The helper never holds the funds.</p>
+    <div class="card">
+      <p>An owner grants a person or an agent a ceiling (with an optional period, expiry, and merchant allowlist). A payment goes from the purse vault straight to the merchant in the same transaction, or the whole thing fails and nothing moves.</p>
+      <p>This is payer-side control, not a pay-by-link invoice, a tip jar, or a membership pass.</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="web/">Open the walletless demo</a>
+      <a class="btn secondary" href="https://github.com/halfabillion/cappurse">View the source (MIT)</a>
+    </div>
+    <ul>
+      <li>Guided Alice and Bob path with pass/fail checks on screen</li>
+      <li>Rust Ootle template and tests in the repository</li>
+      <li>Silent 92-second captioned walkthrough in <a href="submit/video/cappurse-guided-demo.mp4">submit/video/</a></li>
+    </ul>
+    <footer>
+      <div><a href="README.md">README</a> · <a href="LICENSE">Licence</a> · Built for the <a href="https://community.tari.com/t/november-build-contest-thread-mvp/520">Tari November 2026 Build Contest</a></div>
+    </footer>
+  </main>
+</body>
+</html>
